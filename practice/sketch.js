@@ -1,7 +1,48 @@
-function setup() {
-	createCanvas(windowWidth, windowHeight);
-}
+let myp5v1 = new p5(( sketch ) => {
+	
+	let x = 100;
+	let y = 100;
 
-function draw() {
+	sketch.setup = () => {
+      sketch.createCanvas(200, 200);
+	};
+	
+	sketch.draw = () => {
+		sketch.background(0);
+		sketch.fill(255);
+		sketch.rect(x,y,50,50);
+	};
+}, 'sketch1');
 
-}
+let myp5v2 = new p5(( sketch ) => {
+
+	let x = 100;
+	let y = 100;
+
+	sketch.setup = () => {
+		sketch.createCanvas(200, 200);
+		txt = sketch.createP('some text');
+		txt.style("text-align", "center");
+		txt.style("backgound-color", "pink");
+		txt.mouseOver(changeStyle);
+		txt.mouseOut(revertStyle);
+	};
+	
+	sketch.draw = () => {
+		sketch.background(0);
+		sketch.fill("#F55");
+		sketch.ellipse(x,y,50,50);
+	};
+	
+	function changeStyle () {
+		txt.style("background-color", "purple")
+		txt.style("padding", "24px")
+	};
+
+	function revertStyle () {
+		txt.style("background-color", "pink")
+		txt.style("padding", "8px")
+	}
+	
+}, 'sketch2');
+
