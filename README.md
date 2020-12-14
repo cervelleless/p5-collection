@@ -1,3 +1,3 @@
-# p5 collection
+# List of collections
 
-Practice!!
+[Practice!!](https://cervelleless.github.io/p5-collection/practice/)
